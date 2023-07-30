@@ -1,7 +1,11 @@
+import PersonalInformation from './components/PersonalInformation.jsx'
+import Project from './components/Project.jsx'
+
 const App = () => {
   return (
-    <div>
-      <h1>Portfolio Components</h1>
+    <div className='mainContainer'>
+      <PersonalInformation />
+      <Project />
     </div>
   )
 }
