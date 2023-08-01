@@ -1,0 +1,30 @@
+.container {
+  width: fit-content;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: .8rem;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+
+.tableSkills {
+  border-collapse: separate;
+  border-spacing: .6rem;
+}
+
+.progressBar {
+  width: 20rem;
+  height: .6rem;
+  background-color: #c4c4c4;
+  border-radius: .6rem;
+}
+
+.progressBar__value {
+  background-color: #2F80ED;
+  height: 100%;
+  border-radius: .6rem;
+}
