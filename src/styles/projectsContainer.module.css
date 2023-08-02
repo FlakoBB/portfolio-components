@@ -1,0 +1,50 @@
+.header {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: .8rem;
+}
+
+.header__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #4f4f4f;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.filter__tag {
+  padding: .4rem 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  border: 1px solid #4f4f4f;
+  color: #4f4f4f;
+  font-size: .9rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.filter__tag:hover {
+  border-color: #2F80ED;
+  color: #2F80ED;
+}
+
+.filter__tag.selected {
+  background-color: #2F80ED;
+  color: #fff;
+  border-color: #2F80ED;
+}
+
+.projectsList {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}

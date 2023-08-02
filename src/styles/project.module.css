@@ -90,7 +90,14 @@
 
 .project.projectVertical {
   flex-direction: column;
-  width: 26rem;
+  max-width: 26rem;
+  width: 30%;
+}
+
+.project.projectVertical .project__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .project.projectVertical .project__info {
