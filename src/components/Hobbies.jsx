@@ -2,7 +2,7 @@ import styles from '../styles/hobbies.module.css'
 
 const Hobbies = () => {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} shadow`}>
       <h3 className={styles.title}>Hobbies</h3>
       <div className={styles.list}>
         <article className={styles.card}>

@@ -22,7 +22,14 @@ body,
 }
 
 .mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 2rem;
   width: 65rem;
+  padding: 2rem 0;
+  margin-inline: 2rem;
 }
 
 .shadow {

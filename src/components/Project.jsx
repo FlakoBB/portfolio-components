@@ -3,7 +3,7 @@ import styles from '../styles/project.module.css'
 // ToDo: debe recibir la informacion de cada proyecto por props caundo se renderice atraves de un map()
 const Project = () => {
   return (
-    <article className={`${styles.project} ${styles.projectVertical}`}>
+    <article className={`${styles.project} ${styles.projectVertical} shadow`}>
       <figure className={styles.project__image}>
         <img src='https://github.com/FlakoBB/interior-consultant/raw/main/images/screenshot.png' alt='Project image' />
       </figure>

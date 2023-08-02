@@ -62,10 +62,10 @@
 }
 
 .btns button {
-  width: 8rem;
-  height: 3rem;
+  width: 7rem;
+  height: 2.5rem;
   border-radius: .8rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   border: 1px solid #2F80ED;
   cursor: pointer;
@@ -90,8 +90,8 @@
 
 .project.projectVertical {
   flex-direction: column;
-  max-width: 26rem;
   width: 30%;
+  min-width: 18rem;
 }
 
 .project.projectVertical .project__image {
@@ -102,4 +102,18 @@
 
 .project.projectVertical .project__info {
   gap: 1.5rem;
+}
+
+/* ? Responsive */
+
+@media (max-width: 1023px) {
+  .project.projectVertical {
+    width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .project.projectVertical {
+    width: 100%;
+  }
 }

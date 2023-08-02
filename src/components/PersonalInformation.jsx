@@ -2,7 +2,7 @@ import styles from '../styles/personalInformation.module.css'
 
 const PersonalInformation = () => {
   return (
-    <article className={`${styles.card} ${styles.cardVertical}`}>
+    <article className={`${styles.card} shadow`}>
       <figure className={styles.card__image}>
         <img src='./assets/images/profile.jpg' alt='Profile Photo' />
       </figure>

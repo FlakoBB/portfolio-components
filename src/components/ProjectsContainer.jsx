@@ -4,7 +4,7 @@ import styles from '../styles/projectsContainer.module.css'
 const ProjectsContainer = () => {
   return (
     <section>
-      <header className={styles.header}>
+      <header className={`${styles.header} shadow`}>
         <h2 className={styles.header__title}>Projects <span>(3)</span></h2>
         <div className={styles.filter}>
           {/* // ToDo: funcion que filtre proyectos y agregar la clase 'selected' cuando se seleccione el tag */}
