@@ -76,7 +76,7 @@ const projects = [
   {
     title: 'Portfolio Components',
     description: 'Responsive page Portfolio Components',
-    image: '',
+    image: './assets/images/screenshot.png',
     links: {
       demo: 'https://portfolio-components.vercel.app/',
       code: 'https://github.com/FlakoBB/portfolio-components'
