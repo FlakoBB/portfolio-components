@@ -1,25 +1,26 @@
 import styles from '../styles/project.module.css'
 
-// ToDo: debe recibir la informacion de cada proyecto por props caundo se renderice atraves de un map()
-const Project = () => {
+const Project = ({ project }) => {
   return (
     <article className={`${styles.project} ${styles.projectVertical} shadow`}>
       <figure className={styles.project__image}>
-        <img src='https://github.com/FlakoBB/interior-consultant/raw/main/images/screenshot.png' alt='Project image' />
+        <img src={project.image} alt='Project image' />
       </figure>
       <div className={styles.project__info}>
         <div className={styles.tags}>
-          <span>#HTML</span>
-          <span>#CSS</span>
-          <span>#JavaScript</span>
+          {
+            project.tags.map((tag, index) => {
+              return <span key={index}>#{tag}</span>
+            })
+          }
         </div>
         <div className={styles.description}>
-          <h3 className={styles.description__title}>Interior Consultant</h3>
-          <p className={styles.description__paragraph}>In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie. </p>
+          <h3 className={styles.description__title}>{project.title}</h3>
+          <p className={styles.description__paragraph}>{project.description}</p>
         </div>
         <div className={styles.btns}>
-          <a href=''><button className={styles.btns__demo}>Demo</button></a>
-          <a href=''><button className={styles.btns__code}>Code</button></a>
+          <a href={project.links.demo} target='_blank' rel='noreferrer'><button className={styles.btns__demo}>Demo</button></a>
+          <a href={project.links.code} target='_blank' rel='noreferrer'><button className={styles.btns__code}>Code</button></a>
         </div>
       </div>
     </article>
