@@ -1,4 +1,5 @@
 import styles from '../styles/personalInformation.module.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 const PersonalInformation = () => {
   return (
@@ -13,9 +14,8 @@ const PersonalInformation = () => {
             <p className={styles.occupation}>Front End Web Developer</p>
           </div>
           <div className={styles.contact__section}>
-            {/* ToDo: Poner icono al principio de los datos de contacto */}
-            <p className={styles.email}>josephrbb99@gmail.com</p>
-            <p className={styles.phone}>(+00) 0000 0000</p>
+            <p className={styles.email}><i className='bi bi-envelope-fill' /> bbjosephryan@gmail.com</p>
+            <p className={styles.phone}><i className='bi bi-telephone-fill' /> (+00) 0000 0000</p>
           </div>
         </div>
         <div className={styles.description}>

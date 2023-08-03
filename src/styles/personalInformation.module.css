@@ -60,6 +60,11 @@
   font-weight: 400;
 }
 
+.contact__section .email i,
+.contact__section .phone i {
+  margin-right: .6rem;
+}
+
 .description {
   display: flex;
   flex-direction: column;
