@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Project from './Project.jsx'
 import styles from '../styles/projectsContainer.module.css'
 
@@ -84,23 +85,113 @@ const projects = [
   }
 ]
 
+const filter = {
+  all: 'All',
+  html: 'HTML',
+  css: 'CSS',
+  js: 'JavaScript',
+  reactjs: 'ReactJS',
+  django: 'Django'
+}
+
 const ProjectsContainer = () => {
+  const [filterCurrent, setFilterCurrent] = useState(filter.all)
+  const [projectsShow, setProjectsShow] = useState(projects)
+
+  const handleFilter = (newFilter) => {
+    setFilterCurrent(newFilter)
+
+    let newList = []
+
+    switch (newFilter) {
+      case filter.all:
+        console.log('Entro a All')
+        setProjectsShow(projects)
+        break
+      case filter.html:
+        newList = projects.filter((project) => {
+          const tags = project.tags
+          const hasTag = tags.includes(filter.html)
+          if (hasTag) {
+            return project
+          }
+          return null
+        })
+        setProjectsShow(newList)
+        break
+      case filter.css:
+        newList = projects.filter((project) => {
+          const tags = project.tags
+          const hasTag = tags.includes(filter.css)
+          if (hasTag) {
+            return project
+          }
+          return null
+        })
+        setProjectsShow(newList)
+        break
+      case filter.js:
+        newList = projects.filter((project) => {
+          const tags = project.tags
+          const hasTag = tags.includes(filter.js)
+          if (hasTag) {
+            return project
+          }
+          return null
+        })
+        setProjectsShow(newList)
+        break
+      case filter.reactjs:
+        newList = projects.filter((project) => {
+          const tags = project.tags
+          const hasTag = tags.includes(filter.reactjs)
+          if (hasTag) {
+            return project
+          }
+          return null
+        })
+        setProjectsShow(newList)
+        break
+      case filter.django:
+        newList = projects.filter((project) => {
+          const tags = project.tags
+          const hasTag = tags.includes(filter.django)
+          if (hasTag) {
+            return project
+          }
+          return null
+        })
+        setProjectsShow(newList)
+        break
+      default:
+        setProjectsShow(projects)
+        break
+    }
+  }
+
   return (
     <section>
       <header className={`${styles.header} shadow`}>
-        <h2 className={styles.header__title}>Projects <span>(3)</span></h2>
+        <h2 className={styles.header__title}>Projects <span>({projectsShow.length})</span></h2>
         <div className={styles.filter}>
-          {/* // ToDo: funcion que filtre proyectos y agregar la clase 'selected' cuando se seleccione el tag */}
-          <button className={`${styles.filter__tag} ${styles.selected}`}>React</button>
-          <button className={styles.filter__tag}>Django</button>
-          <button className={styles.filter__tag}>Vue</button>
+          <button type='button' onClick={() => handleFilter(filter.all)} className={`${styles.filter__tag} ${filterCurrent === filter.all ? styles.selected : ''}`}>All</button>
+          <button type='button' onClick={() => handleFilter(filter.css)} className={`${styles.filter__tag} ${(filterCurrent === filter.html || filterCurrent === filter.css) ? styles.selected : ''}`}>HTML | CSS</button>
+          <button type='button' onClick={() => handleFilter(filter.js)} className={`${styles.filter__tag} ${filterCurrent === filter.js ? styles.selected : ''}`}>JavaScript</button>
+          <button type='button' onClick={() => handleFilter(filter.reactjs)} className={`${styles.filter__tag} ${filterCurrent === filter.reactjs ? styles.selected : ''}`}>React</button>
+          <button type='button' onClick={() => handleFilter(filter.django)} className={`${styles.filter__tag} ${filterCurrent === filter.django ? styles.selected : ''}`}>Django</button>
         </div>
       </header>
       <main className={styles.projectsList}>
         {
-          projects.map((project, index) => {
-            return <Project key={index} project={project} />
-          })
+          projectsShow.length > 0
+            ? projectsShow.map((project, index) => {
+              return <Project key={index} project={project} />
+            })
+            : (
+              <div className={styles.noProjects}>
+                <p>There are no projects made with {filterCurrent}</p>
+              </div>
+              )
         }
       </main>
     </section>
