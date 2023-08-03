@@ -91,7 +91,8 @@ const filter = {
   css: 'CSS',
   js: 'JavaScript',
   reactjs: 'ReactJS',
-  django: 'Django'
+  django: 'Django',
+  mysql: 'MySQL'
 }
 
 const ProjectsContainer = () => {
@@ -163,6 +164,17 @@ const ProjectsContainer = () => {
         })
         setProjectsShow(newList)
         break
+      case filter.mysql:
+        newList = projects.filter((project) => {
+          const tags = project.tags
+          const hasTag = tags.includes(filter.mysql)
+          if (hasTag) {
+            return project
+          }
+          return null
+        })
+        setProjectsShow(newList)
+        break
       default:
         setProjectsShow(projects)
         break
@@ -175,10 +187,11 @@ const ProjectsContainer = () => {
         <h2 className={styles.header__title}>Projects <span>({projectsShow.length})</span></h2>
         <div className={styles.filter}>
           <button type='button' onClick={() => handleFilter(filter.all)} className={`${styles.filter__tag} ${filterCurrent === filter.all ? styles.selected : ''}`}>All</button>
+          <button type='button' onClick={() => handleFilter(filter.django)} className={`${styles.filter__tag} ${filterCurrent === filter.django ? styles.selected : ''}`}>Django</button>
           <button type='button' onClick={() => handleFilter(filter.css)} className={`${styles.filter__tag} ${(filterCurrent === filter.html || filterCurrent === filter.css) ? styles.selected : ''}`}>HTML | CSS</button>
           <button type='button' onClick={() => handleFilter(filter.js)} className={`${styles.filter__tag} ${filterCurrent === filter.js ? styles.selected : ''}`}>JavaScript</button>
+          <button type='button' onClick={() => handleFilter(filter.mysql)} className={`${styles.filter__tag} ${filterCurrent === filter.mysql ? styles.selected : ''}`}>MySQL</button>
           <button type='button' onClick={() => handleFilter(filter.reactjs)} className={`${styles.filter__tag} ${filterCurrent === filter.reactjs ? styles.selected : ''}`}>React</button>
-          <button type='button' onClick={() => handleFilter(filter.django)} className={`${styles.filter__tag} ${filterCurrent === filter.django ? styles.selected : ''}`}>Django</button>
         </div>
       </header>
       <main className={styles.projectsList}>
